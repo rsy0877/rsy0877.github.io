@@ -1,0 +1,16 @@
+import json
+
+mac=["763","568","851","123"]
+data='[{"Mac":"123","Rssi":28},{"Mac":"763","Rssi":0},{"Mac":"851","Rssi":2},{"Mac":"568","Rssi":-20}]'
+str_json=json.loads(data)
+print(str_json)
+print(str_json[0])
+print(str_json[0].get("Mac"))
+
+l=[0,1,2,3]
+for i in range(4):
+	for j in range(4):
+		if str_json[i].get("Mac")==mac[j]:
+			l[j]=str_json[i].get("Rssi")
+			print(str_json[i].get("Rssi"),str_json[i].get("Mac"),mac[j])
+print(l)
