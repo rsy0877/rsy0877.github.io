@@ -1,0 +1,22 @@
+from flask import Flask,request
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+@app.route("/finger/<abc>",methods = ['GET'])
+def locate1(abc):
+    print ("location,"+abc)
+    return "location,"+str(abc)
+
+@app.route("/finger/",methods = ['POST'])
+def locate2():
+    efg=request.values.get("efg")
+    print ("location,"+efg)
+    return "location,"+str(efg)
+
+	
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
